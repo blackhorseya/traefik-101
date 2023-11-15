@@ -30,5 +30,4 @@ services:
     image: traefik/whoami
     labels:
       - "traefik.http.routers.whoami.rule=Host(`whoami.$DOMAIN`)"
-      - "traefik.http.routers.whoami.entrypoints=websecure"
       - "traefik.http.routers.whoami.tls.certresolver=myresolver"
