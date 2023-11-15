@@ -5,7 +5,8 @@ services:
     image: traefik:3.0
     command:
       - "--log.level=DEBUG"
-      - "--api.insecure=true"
+      - "--api=true"
+      - "--api.insecure=false"
       - "--providers.docker=true"
       - "--entrypoints.web.address=:80"
       - "--entrypoints.websecure.address=:443"
