@@ -22,7 +22,6 @@ services:
       # http://traefik.seancheng.space/dashboard/#/
       - "traefik.http.routers.api.rule=Host(`traefik.$DOMAIN`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))"
       - "traefik.http.routers.api.service=api@internal"
-      - "traefik.http.routers.api.entrypoints=websecure"
   
   whoami:
     image: traefik/whoami
