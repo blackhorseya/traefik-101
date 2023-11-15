@@ -27,4 +27,3 @@ services:
     image: traefik/whoami
     labels:
       - "traefik.http.routers.whoami.rule=Host(`whoami.seancheng.space`)" # curl -H Host:whoami.seancheng.space http://127.0.0.1
-      - "traefik.http.routers.whoami.entrypoints=websecure" # Use the websecure entrypoint
