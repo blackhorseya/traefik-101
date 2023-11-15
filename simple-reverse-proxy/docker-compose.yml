@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  reverse-proxy:
+    image: traefik:3.0
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+    ports:
+      - "80:80"
+      - "8080:8080" # The Web UI (enabled by --api.insecure=true) http://localhost:8080/dashboard#/
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  whoami:
+    image: traefik/whoami
+    labels:
+      - "traefik.http.routers.whoami.rule=Host(`whoami.seancheng.space`)"
