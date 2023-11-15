@@ -21,3 +21,5 @@ services:
     labels:
       # curl -H Host:whoami.seancheng.space http://127.0.0.1
       - "traefik.http.routers.whoami.rule=Host(`whoami.seancheng.space`)"
+      - "traefik.enable=true"
+      - "traefik.http.routers.whoami.entrypoints=websecure"
